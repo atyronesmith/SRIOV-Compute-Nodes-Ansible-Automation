@@ -8,9 +8,10 @@
 # Ensure that each network specified in additionalNetworks exists
 - name: Verify additionalNetworks
   os_networks_info:
-    name: "{{ item.id }}"
-  with_items: "{{ additionalNetworks }}"
+    name: "{{ item.1.id }}"
+  with_indexed_items: "{{ additionalNetworks }}"
   register: network_info
+  failed_when: network_info.openstack_networks|length == 0
 
 # Expand additionalNetworks by the count parameter in each network definition
 - name: Build port and port index list for additionalNetworks
