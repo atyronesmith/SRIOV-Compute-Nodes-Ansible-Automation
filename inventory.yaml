@@ -8,7 +8,7 @@ all:
       os_subnet_range: '10.0.0.0/16'
       os_flavor_master: 'ocp'
       os_flavor_worker: 'ocp-worker'
-      os_image_rhcos: 'fdp-nz995-rhcos'
+      os_image_rhcos: 'update-me-rhcos'
       # Service subnet cidr
       svc_subnet_range: '172.30.0.0/16'
       os_svc_network_range: '172.30.0.0/15'
@@ -62,11 +62,11 @@ all:
 
       additionalNetworks: 
       - id: radio_uplink
-        count: 6
+        count: 4
         type: direct
         port_security_enabled: no
       - id: radio_downlink
-        count: 6
+        count: 4
         type: direct
         port_security_enabled: no
       - id: uplink1
